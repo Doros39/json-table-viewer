@@ -1,0 +1,1 @@
+# json-table-viewer\n\nWeb Component rendering tables from JSON data.\n\n## Usage\n```html\n<script type='module' src='json-table-viewer.js'></script>\n<json-table-viewer data='[{"name":"Jan","age":25}]'></json-table-viewer>\n```

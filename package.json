@@ -1,0 +1,30 @@
+{
+  "name": "json-table-viewer",
+  "version": "0.1.0",
+  "description": "A tiny Web Component that renders HTML tables from JSON data.",
+  "type": "module",
+  "main": "dist/json-table-viewer.js",
+  "module": "dist/json-table-viewer.esm.js",
+"scripts": {
+  "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js --env=jsdom"
+}
+,
+  "keywords": [
+    "web-component",
+    "table",
+    "json"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.28.4",
+    "@babel/preset-env": "^7.28.3",
+    "@rollup/plugin-babel": "^6.0.4",
+    "@rollup/plugin-commonjs": "^24.1.0",
+    "@rollup/plugin-node-resolve": "^15.3.1",
+    "esbuild": "^0.19.0",
+    "jest": "^29.6.0",
+    "jest-environment-jsdom": "^30.2.0",
+    "jsdom": "^22.1.0",
+    "rollup": "^3.29.5"
+  }
+}

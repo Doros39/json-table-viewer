@@ -1,0 +1,6 @@
+[
+  { "name": "Jan", "surename": "Dzban", "age": 25 },
+  { "name": "Anna", "surename": "Nowak", "age": 30 },
+  { "name": "Piotr", "surename": "Igor", "age": 28 },
+  { "name": "Katarzyna", "surename": "Wiśniewska", "age": 35 }
+]

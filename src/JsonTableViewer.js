@@ -1,41 +1,86 @@
-// Simple Web Component rendering table from JSON
-const template = document.createElement('template');
-template.innerHTML = `<style>
-  :host { display:block; font-family:sans-serif; }
-  table { width:100%; border-collapse:collapse; }
-  th,td { padding:8px; border:1px solid #ddd; }
-  th { cursor:pointer; }
-</style>
-<div>
-  <input id='search' placeholder='Search...' />
-  <div id='tableWrap'></div>
-</div>`;
-
 export default class JsonTableViewer extends HTMLElement {
+  static get observedAttributes() {
+    return ['data'];
+  }
+
   constructor() {
     super();
-    this.attachShadow({mode:'open'}).appendChild(template.content.cloneNode(true));
-    this.data = [];
+    this.attachShadow({ mode: 'open' });
   }
-  static get observedAttributes() { return ['data']; }
-  attributeChangedCallback(name, oldVal, newVal) {
-    if (name === 'data') {
-      try { this.data = JSON.parse(newVal); this.render(); } catch(e){}
+
+  async connectedCallback() {
+    const dataSrc = this.getAttribute('data-src');
+    if (dataSrc) {
+      try {
+        const response = await fetch(dataSrc);
+        const json = await response.json();
+        this.render(json);
+      } catch (error) {
+        console.error("Błąd wczytywania danych JSON:", error);
+        this.shadowRoot.innerHTML = `<p style="color:red;">Nie udało się wczytać danych z ${dataSrc}</p>`;
+      }
+    } else {
+      this.update();
     }
   }
-  connectedCallback() {
-    this.search = this.shadowRoot.querySelector('#search');
-    this.wrap = this.shadowRoot.querySelector('#tableWrap');
-    this.search.addEventListener('input', () => this.render());
-    if (this.hasAttribute('data')) this.attributeChangedCallback('data', '', this.getAttribute('data'));
+
+  attributeChangedCallback(name, oldValue, newValue) {
+    if (name === 'data' && oldValue !== newValue) {
+      this.update();
+    }
   }
-  render() {
-    if (!Array.isArray(this.data) || this.data.length===0) { this.wrap.innerHTML = '<p>No data</p>'; return; }
-    const query = this.search.value.toLowerCase();
-    const keys = Object.keys(this.data[0]);
-    const filtered = this.data.filter(r => Object.values(r).some(v => String(v).toLowerCase().includes(query)));
-    const rows = filtered.map(r => `<tr>${keys.map(k => `<td>${r[k]}</td>`).join('')}</tr>`).join('');
-    this.wrap.innerHTML = `<table><thead><tr>${keys.map(k=>`<th>${k}</th>`).join('')}</tr></thead><tbody>${rows}</tbody></table>`;
+
+  update() {
+    const dataAttr = this.getAttribute('data');
+    if (!dataAttr) return;
+    try {
+      const data = JSON.parse(dataAttr);
+      this.render(data);
+    } catch (error) {
+      console.error("Niepoprawny JSON:", error);
+    }
+  }
+
+  render(data) {
+    if (!Array.isArray(data) || data.length === 0) {
+      this.shadowRoot.innerHTML = "<p>Brak danych do wyświetlenia.</p>";
+      return;
+    }
+
+    const columns = Object.keys(data[0]);
+    const table = `
+      <style>
+        table {
+          border-collapse: collapse;
+          width: 100%;
+          font-family: Arial, sans-serif;
+        }
+        th, td {
+          border: 1px solid #ccc;
+          padding: 8px;
+          text-align: left;
+        }
+        th {
+          background-color: #007bff;
+          color: white;
+        }
+        tr:nth-child(even) {
+          background-color: #f9f9f9;
+        }
+      </style>
+      <table>
+        <thead>
+          <tr>${columns.map(col => `<th>${col}</th>`).join('')}</tr>
+        </thead>
+        <tbody>
+          ${data.map(row => `
+            <tr>${columns.map(col => `<td>${row[col] ?? ''}</td>`).join('')}</tr>
+          `).join('')}
+        </tbody>
+      </table>
+    `;
+    this.shadowRoot.innerHTML = table;
   }
 }
+
 customElements.define('json-table-viewer', JsonTableViewer);

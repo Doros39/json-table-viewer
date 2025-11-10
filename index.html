@@ -1,16 +1,35 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-  <meta charset="UTF-8">
-  <title>JSON Table Viewer Demo</title>
+  <meta charset="UTF-8" />
+  <title>JSON Table Viewer - Demo</title>
   <script type="module" src="./src/JsonTableViewer.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 2rem;
+      background-color: #f4f4f9;
+    }
+
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+
+    json-table-viewer {
+      display: block;
+      margin: 2rem auto;
+      max-width: 1000px;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+      padding: 1rem;
+    }
+  </style>
 </head>
 <body>
-  <h1>Demo JSON Table Viewer</h1>
+  <h1>JSON Table Viewer - Demo</h1>
 
-  <!-- Nasz komponent -->
   <json-table-viewer data-src="./data.json"></json-table-viewer>
-
-
 </body>
 </html>

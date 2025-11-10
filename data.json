@@ -1,6 +1,112 @@
 [
-  { "name": "Jan", "surename": "Dzban", "age": 25 },
-  { "name": "Anna", "surename": "Nowak", "age": 30 },
-  { "name": "Piotr", "surename": "Igor", "age": 28 },
-  { "name": "Katarzyna", "surename": "Wiśniewska", "age": 35 }
+  {
+    "name": "Jan",
+    "surname": "Dzban",
+    "age": 25,
+    "city": "Warszawa",
+    "email": "jan.dzban@example.com",
+    "phone": "+48 600 123 456",
+    "occupation": "Programista",
+    "salary": 8500
+  },
+  {
+    "name": "Anna",
+    "surname": "Nowak",
+    "age": 30,
+    "city": "Kraków",
+    "email": "anna.nowak@example.com",
+    "phone": "+48 601 222 333",
+    "occupation": "Projektantka UX",
+    "salary": 9200
+  },
+  {
+    "name": "Piotr",
+    "surname": "Igor",
+    "age": 28,
+    "city": "Gdańsk",
+    "email": "piotr.igor@example.com",
+    "phone": "+48 602 987 654",
+    "occupation": "Analityk danych",
+    "salary": 7800
+  },
+  {
+    "name": "Katarzyna",
+    "surname": "Wiśniewska",
+    "age": 35,
+    "city": "Poznań",
+    "email": "katarzyna.wisniewska@example.com",
+    "phone": "+48 603 456 789",
+    "occupation": "Kierownik projektu",
+    "salary": 10500
+  },
+  {
+    "name": "Michał",
+    "surname": "Zieliński",
+    "age": 32,
+    "city": "Łódź",
+    "email": "michal.zielinski@example.com",
+    "phone": "+48 604 333 222",
+    "occupation": "Inżynier DevOps",
+    "salary": 9800
+  },
+  {
+    "name": "Ewelina",
+    "surname": "Kowalczyk",
+    "age": 27,
+    "city": "Wrocław",
+    "email": "ewelina.kowalczyk@example.com",
+    "phone": "+48 605 999 111",
+    "occupation": "Specjalistka HR",
+    "salary": 7200
+  },
+  {
+    "name": "Tomasz",
+    "surname": "Majewski",
+    "age": 40,
+    "city": "Szczecin",
+    "email": "tomasz.majewski@example.com",
+    "phone": "+48 606 888 777",
+    "occupation": "Dyrektor sprzedaży",
+    "salary": 13500
+  },
+  {
+    "name": "Agnieszka",
+    "surname": "Wójcik",
+    "age": 29,
+    "city": "Lublin",
+    "email": "agnieszka.wojcik@example.com",
+    "phone": "+48 607 444 555",
+    "occupation": "Marketing Specialist",
+    "salary": 8100
+  },
+  {
+    "name": "Robert",
+    "surname": "Lewandowski",
+    "age": 33,
+    "city": "Bydgoszcz",
+    "email": "robert.lewandowski@example.com",
+    "phone": "+48 608 666 222",
+    "occupation": "Product Manager",
+    "salary": 11000
+  },
+  {
+    "name": "Paulina",
+    "surname": "Sikora",
+    "age": 26,
+    "city": "Katowice",
+    "email": "paulina.sikora@example.com",
+    "phone": "+48 609 111 000",
+    "occupation": "Grafik komputerowy",
+    "salary": 7500
+  },
+  {
+    "name": "Adam",
+    "surname": "Noga",
+    "age": 35,
+    "city": "Katowice",
+    "email": "adam.noga@example.com",
+    "phone": "+48 500 181 456",
+    "occupation": "Grafik komputerowy",
+    "salary": 7500
+  }
 ]

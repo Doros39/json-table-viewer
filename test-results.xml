@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="jest tests" tests="3" failures="0" errors="0" time="1.072">
+  <testsuite name="JsonTableViewer component" errors="0" failures="0" skipped="0" timestamp="2025-12-03T21:42:51" time="0.478" tests="3">
+    <testcase classname="JsonTableViewer component renders table from provided data" name="JsonTableViewer component renders table from provided data" time="0.025">
+    </testcase>
+    <testcase classname="JsonTableViewer component filters data by search term" name="JsonTableViewer component filters data by search term" time="0.01">
+    </testcase>
+    <testcase classname="JsonTableViewer component sorts data when header is clicked" name="JsonTableViewer component sorts data when header is clicked" time="0.008">
+    </testcase>
+  </testsuite>
+</testsuites>

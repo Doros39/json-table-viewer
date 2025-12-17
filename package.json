@@ -1,10 +1,17 @@
 {
-  "name": "json-table-viewer",
+  "name": "@doros39/json-table-viewer",
   "version": "0.1.0",
-  "description": "A tiny Web Component that renders HTML tables from JSON data.",
+  "description": "A Web Component that renders interactive HTML tables from JSON data.",
   "type": "module",
   "main": "dist/json-table-viewer.js",
-  "module": "dist/json-table-viewer.esm.js",
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Doros39/json-table-viewer.git"
+  },
   "scripts": {
     "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js --env=jsdom",
     "test:coverage": "node --experimental-vm-modules node_modules/jest/bin/jest.js --coverage --reporters=default --reporters=jest-junit --env=jsdom",
@@ -13,9 +20,11 @@
   },
   "keywords": [
     "web-component",
+    "custom-element",
     "table",
     "json"
   ],
+  "author": "Doros39",
   "license": "MIT",
   "devDependencies": {
     "@babel/core": "^7.28.4",
@@ -35,8 +44,8 @@
     "transform": {},
     "clearMocks": true,
     "verbose": true
-    },
-    "jest-junit": {
+  },
+  "jest-junit": {
     "outputDirectory": "./",
     "outputName": "test-results.xml"
   }

@@ -1,6 +1,6 @@
 {
   "name": "@doros39/json-table-viewer",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "description": "A Web Component that renders interactive HTML tables from JSON data.",
   "type": "module",
   "main": "dist/json-table-viewer.js",
